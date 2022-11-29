@@ -104,11 +104,10 @@ def formatColumns(df):
     df['merged'] = df.apply(combine2, axis=1, args = features)
     print(df['merged'].head())
 
-# count the number of occurences for each tags in the data set
     # count the number of occurences for each genre in the data set
     counts = dict()
     for i in df.index:
-    #for each element in list (each row, split by ' ', in genres column)
+    #for each element in list (each row, split by ' ', in tags column)
     #-- we're splitting by space so tfidf can interpret the rows
         for g in df.loc[i,'tags'].split(' '):
         #if element is not in counts(dictionary of genres)
