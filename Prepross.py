@@ -105,13 +105,20 @@ def formatColumns(df):
     print(df['merged'].head())
 
 # count the number of occurences for each tags in the data set
-
+    # count the number of occurences for each genre in the data set
     counts = dict()
-    # for each element in list (each row, split by ' ', in genres column)
-    # we're splitting by space so tfidf can interpret the rows
     for i in df.index:
-        for tag in df['merged'][i].split():
-            if tag in counts:
-                counts[tag] += 1
+    #for each element in list (each row, split by ' ', in genres column)
+    #-- we're splitting by space so tfidf can interpret the rows
+        for g in df.loc[i,'tags'].split(' '):
+        #if element is not in counts(dictionary of genres)
+            if g not in counts:
+                #give genre dictonary entry the value of 1
+                counts[g] = 1
             else:
-                counts[tag] = 1
+                #increase genre dictionary entry by 1
+                counts[g] = counts[g] + 1
+    #Test Genre Counts
+    counts.keys()
+    print(counts['Action'])
+    return df
