@@ -1,5 +1,4 @@
-# AnimeRecommender
-#Proyecto Final Topicos Avanzados IA
+# Proyecto Final Topicos Avanzados IA
 # AnimeRecommender
     [![Build Status](https://travis-ci.com/Anime-Recommendations/AnimeRecommender.svg?branch=master)](https://travis-ci.com/Anime-Recommendations/AnimeRecommender)
 [![Coverage Status](https://coveralls.io/repos/github/Anime-Recommendations/AnimeRecommender/badge.svg?branch=master)](https://coveralls.io/github/Anime-Recommendations/AnimeRecommender?branch=master)
