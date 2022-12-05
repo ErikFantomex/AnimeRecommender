@@ -1,5 +1,5 @@
 
-
+import Prepross
 import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -32,14 +32,14 @@ def get_title_from_index(df, index):
 def get_index_from_title(df, title):
    return df[df.name == title].index.values[0]
 
-def get_score_from_index(df, index):
+def get_votes_from_index(df, index):
    return df[df.index == index]['votes'].values[0]
 
 def get_weighted_score_from_index(df, index):
    return df[df.index == index]['weighted_score'].values[0]
 
-def get_total_ratings_from_index(df, index):
-   return df[df.index == index]['rating'].values[0]
+def get_total_audience_from_index(df, index):
+   return df[df.index == index]['totalAudience'].values[0]
 
 def get_platform_from_index(df, index):
    return df[df.index == index]['mediaType'].values[0]

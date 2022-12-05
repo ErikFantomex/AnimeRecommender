@@ -1,22 +1,29 @@
 from flask import Flask,jsonify,request
 
+from Recommender import *
+
 app = Flask(__name__)
 
+@app.route('/ping')
+def ping():
+    print('pong')
+    return jsonify({'message': 'pong'})
+    
+@app.route('/products', methods=['GET'])
+def get_products():
+    return jsonify({'products': ['milk', 'eggs', 'bread']})
 
-tasks = [
-    {
-        'id':1,
-        'title':u'Buy Groceries',
-        'description':u'Milk, Cheese, Pizza, Fruit, Tylenol',
-        'done':False
-    },
-    {
-        'id':2,
-        'title':u'Learn Python',
-        'description':u'Need to find a good Python tutorial on the web',
-        'done':False
+@app.route('/products', methods=['POST'])
+def addProduct():
+    new_product = {
+        'name': request.json['name'],
+        'price': request.json['price'],
+        'quantity': request.json['quantity']
     }
-]
+    return jsonify({'message': 'product added successfully'})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
 
 
 
