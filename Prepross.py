@@ -2,6 +2,11 @@ import pandas as pd
 import numpy as np
 import re
 
+#Activar ambiente
+#.\my_env\Scripts\activate
+
+#
+
 ## import matplotlib.pyplot as plt
 def importData(filename):
     df = pd.read_csv(filename, encoding = "utf-8")
@@ -64,12 +69,9 @@ def addWeightedRating(df):
     # m is the minimum votes required to be listed in the chart
     m = df['votes'].quantile(0.90)
     # Filter out all qualified movies into a new DataFrame
-    q_animes = df.copy().loc[df['votes'] >= m]
-    # Calculate score using the IMDB formula
-    q_animes['score'] = q_animes.apply(weighted_rating, args=(m, C), axis=1)
-    # Sort movies based on score calculated above
-    q_animes = q_animes.sort_values('score', ascending=False)
-    return q_animes
+    df['weighted_score'] = df.apply(weighted_rating, axis=1, args=(m, C))
+
+    return df
 
 def combine(x, colA, colB, colC):
     return x[colA] + ' ' + x[colB] + ' ' + x[colC]
