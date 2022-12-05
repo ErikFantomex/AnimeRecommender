@@ -25,6 +25,8 @@ def addProduct():
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
 
+#ds = pd.read_csv('data.csv')
+
 
 
 

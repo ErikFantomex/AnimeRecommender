@@ -1,3 +1,4 @@
+# Proyecto Final Topicos Avanzados IA
 # AnimeRecommender
     [![Build Status](https://travis-ci.com/Anime-Recommendations/AnimeRecommender.svg?branch=master)](https://travis-ci.com/Anime-Recommendations/AnimeRecommender)
 [![Coverage Status](https://coveralls.io/repos/github/Anime-Recommendations/AnimeRecommender/badge.svg?branch=master)](https://coveralls.io/github/Anime-Recommendations/AnimeRecommender?branch=master)
@@ -39,4 +40,8 @@ To run the tests, run the following command:
 
 ## Authors
 
+<<<<<<< HEAD
 - **Sahil Shah** - [Sahil Shah](
+=======
+- *Horacio Araiza Gonzalez** - [Horacio](
+>>>>>>> 67de75f0ee563643579a034651d1a749c1777493
